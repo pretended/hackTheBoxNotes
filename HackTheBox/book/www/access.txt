@@ -1,0 +1,9 @@
+/home/reader/backups/access.log {
+	daily
+	rotate 12
+	missingok
+	notifempty
+	size 1k
+    create
+}
+

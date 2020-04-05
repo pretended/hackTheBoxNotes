@@ -1,0 +1,15 @@
+import socket
+from threading import *
+
+serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+host = "10.10.10.168"
+port = 8080
+print (host)
+print (port)
+serversocket.connect((host,port))
+def run(self):
+	while 1:
+            	self.sock.send(b'whoami'ten(5)
+print ('server started and listening')
+while 1:
+    client(clientsocket, address)

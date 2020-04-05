@@ -1,0 +1,215 @@
+# Nmap 7.60 scan initiated Wed Nov 27 11:50:07 2019 as: nmap -sV -sT -sC -o strap 217.61.208.150
+Nmap scan report for 217.61.208.150
+Host is up (0.022s latency).
+Not shown: 962 filtered ports
+PORT      STATE  SERVICE            VERSION
+20/tcp    closed ftp-data
+21/tcp    open   ftp                ProFTPD
+| ssl-cert: Subject: commonName=wearestrap.loading.net
+| Subject Alternative Name: DNS:wearestrap.loading.net
+| Not valid before: 2019-10-28T13:27:38
+|_Not valid after:  2020-01-26T13:27:38
+|_ssl-date: TLS randomness does not represent time
+| tls-nextprotoneg: 
+|_  ftp
+22/tcp    open   ssh                OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 2d:6e:c4:77:f3:34:a0:72:47:c7:62:96:ca:54:1e:86 (RSA)
+|_  256 bb:52:5a:15:6b:a4:d4:85:5e:1a:a9:63:61:93:cc:dd (ECDSA)
+25/tcp    closed smtp
+53/tcp    open   domain             ISC BIND none
+| dns-nsid: 
+|_  bind.version: none
+80/tcp    open   http               nginx
+|_http-server-header: nginx
+|_http-title: Web Server's Default Page
+110/tcp   open   pop3               Dovecot pop3d
+|_pop3-capabilities: STLS RESP-CODES PIPELINING APOP AUTH-RESP-CODE TOP UIDL CAPA SASL(PLAIN LOGIN DIGEST-MD5 CRAM-MD5) USER
+| ssl-cert: Subject: commonName=wearestrap.loading.net
+| Subject Alternative Name: DNS:wearestrap.loading.net
+| Not valid before: 2019-10-28T13:27:38
+|_Not valid after:  2020-01-26T13:27:38
+|_ssl-date: TLS randomness does not represent time
+113/tcp   closed ident
+135/tcp   closed msrpc
+139/tcp   closed netbios-ssn
+143/tcp   open   imap               Dovecot imapd
+|_imap-capabilities: have SASL-IR capabilities IMAP4rev1 post-login IDLE AUTH=CRAM-MD5A0001 LOGIN-REFERRALS STARTTLS ENABLE Pre-login more listed AUTH=LOGIN AUTH=DIGEST-MD5 LITERAL+ AUTH=PLAIN ID OK
+| ssl-cert: Subject: commonName=wearestrap.loading.net
+| Subject Alternative Name: DNS:wearestrap.loading.net
+| Not valid before: 2019-10-28T13:27:38
+|_Not valid after:  2020-01-26T13:27:38
+|_ssl-date: TLS randomness does not represent time
+443/tcp   open   ssl/http           nginx
+|_http-server-header: nginx
+|_http-title: Web Server's Default Page
+| ssl-cert: Subject: commonName=Parallels Panel/organizationName=Parallels/stateOrProvinceName=Virginia/countryName=US
+| Not valid before: 2014-10-20T15:38:58
+|_Not valid after:  2015-10-20T15:38:58
+|_ssl-date: TLS randomness does not represent time
+| tls-nextprotoneg: 
+|_  http/1.1
+445/tcp   closed microsoft-ds
+465/tcp   open   ssl/smtp           Postfix smtpd
+|_smtp-commands: wearestrap.loading.net, PIPELINING, SIZE 102400000, ETRN, AUTH DIGEST-MD5 CRAM-MD5 PLAIN LOGIN, ENHANCEDSTATUSCODES, 8BITMIME, DSN, 
+| ssl-cert: Subject: commonName=wearestrap.loading.net
+| Subject Alternative Name: DNS:wearestrap.loading.net
+| Not valid before: 2019-10-28T13:27:38
+|_Not valid after:  2020-01-26T13:27:38
+|_ssl-date: TLS randomness does not represent time
+587/tcp   open   smtp               Postfix smtpd
+|_smtp-commands: wearestrap.loading.net, PIPELINING, SIZE 102400000, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, 
+| ssl-cert: Subject: commonName=wearestrap.loading.net
+| Subject Alternative Name: DNS:wearestrap.loading.net
+| Not valid before: 2019-10-28T13:27:38
+|_Not valid after:  2020-01-26T13:27:38
+|_ssl-date: TLS randomness does not represent time
+993/tcp   open   ssl/imap           Dovecot imapd
+|_imap-capabilities: have SASL-IR capabilities IMAP4rev1 post-login IDLE AUTH=CRAM-MD5A0001 LOGIN-REFERRALS ENABLE AUTH=DIGEST-MD5 more Pre-login AUTH=LOGIN listed LITERAL+ AUTH=PLAIN ID OK
+| ssl-cert: Subject: commonName=wearestrap.loading.net
+| Subject Alternative Name: DNS:wearestrap.loading.net
+| Not valid before: 2019-10-28T13:27:38
+|_Not valid after:  2020-01-26T13:27:38
+|_ssl-date: TLS randomness does not represent time
+995/tcp   open   ssl/pop3           Dovecot pop3d
+|_pop3-capabilities: TOP CAPA PIPELINING APOP AUTH-RESP-CODE UIDL RESP-CODES SASL(PLAIN LOGIN DIGEST-MD5 CRAM-MD5) USER
+| ssl-cert: Subject: commonName=wearestrap.loading.net
+| Subject Alternative Name: DNS:wearestrap.loading.net
+| Not valid before: 2019-10-28T13:27:38
+|_Not valid after:  2020-01-26T13:27:38
+|_ssl-date: TLS randomness does not represent time
+999/tcp   closed garcon
+1025/tcp  closed NFS-or-IIS
+1080/tcp  closed socks
+2000/tcp  open   cisco-sccp?
+3306/tcp  open   mysql              MySQL 5.5.64-MariaDB
+| mysql-info: 
+|   Protocol: 10
+|   Version: 5.5.64-MariaDB
+|   Thread ID: 115640
+|   Capabilities flags: 63487
+|   Some Capabilities: SupportsCompression, DontAllowDatabaseTableColumn, SupportsLoadDataLocal, Speaks41ProtocolNew, SupportsTransactions, LongColumnFlag, Speaks41ProtocolOld, FoundRows, IgnoreSpaceBeforeParenthesis, ODBCClient, InteractiveClient, Support41Auth, IgnoreSigpipes, LongPassword, ConnectWithDatabase, SupportsAuthPlugins, SupportsMultipleResults, SupportsMultipleStatments
+|   Status: Autocommit
+|   Salt: JjWRv}/qjDQLiJv7JP4R
+|_  Auth Plugin Name: 87
+4242/tcp  closed vrml-multi-use
+4662/tcp  closed edonkey
+5060/tcp  open   sip?
+6666/tcp  closed irc
+6667/tcp  closed irc
+6881/tcp  closed bittorrent-tracker
+8443/tcp  open   ssl/https-alt      sw-cp-server
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Server: sw-cp-server
+|     Date: Wed, 27 Nov 2019 10:50:25 GMT
+|     Content-Type: text/html; charset=UTF-8
+|     Connection: close
+|     Expires: Fri, 28 May 1999 00:00:00 GMT
+|     Last-Modified: Wed, 27 Nov 2019 10:50:25 GMT
+|     Cache-Control: no-store, no-cache, must-revalidate
+|     Cache-Control: post-check=0, pre-check=0
+|     Pragma: no-cache
+|     P3P: CP="NON COR CURa ADMa OUR NOR UNI COM NAV STA"
+|     <html><head>
+|     <meta charset="utf-8">
+|     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+|     <meta name="plesk-build" content="1708180301.19">
+|     <title>Plesk Onyx 17.8.11</title>
+|     <script language="javascript" type="text/javascript" src="/javascript/common.js?1519907507"/></script>
+|     <script language="javascript" type="text/javascript" src="/javascript/externals/prototype.js?1519907507"/></script>
+|     </head><body onLoad=";top.location='
+|   HTTPOptions: 
+|     HTTP/1.1 405 Not Allowed
+|     Server: sw-cp-server
+|     Date: Wed, 27 Nov 2019 10:50:25 GMT
+|     Content-Type: text/html
+|     Content-Length: 2654
+|     Connection: close
+|     ETag: "5965c92a-a5e"
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="utf-8">
+|     <meta http-equiv="x-ua-compatible" content="ie=edge">
+|     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+|     <title>405 Method Not Allowed</title>
+|     <link rel="stylesheet" href="/error_docs/styles.css">
+|     </head>
+|     <body>
+|     <div class="page">
+|     <div class="main">
+|     <div class="error-description">
+|     <h1>Server Error</h1>
+|     <div class="error-code">405</div>
+|     <h2>Method Not Allowed</h2>
+|     class="lead">The HTTP verb used to access this page is not allowed.</p>
+|     <hr/>
+|_    <p>If you think this is an error, please <a href="https://www.plesk.com/bug
+| http-robots.txt: 1 disallowed entry 
+|_/
+|_http-server-header: sw-cp-server
+|_http-title: Plesk Onyx 17.8.11
+| ssl-cert: Subject: commonName=wearestrap.loading.net
+| Subject Alternative Name: DNS:wearestrap.loading.net
+| Not valid before: 2019-10-28T13:27:38
+|_Not valid after:  2020-01-26T13:27:38
+|_ssl-date: TLS randomness does not represent time
+| tls-nextprotoneg: 
+|_  http/1.1
+60020/tcp closed unknown
+60443/tcp closed unknown
+61532/tcp closed unknown
+61900/tcp closed unknown
+62078/tcp closed iphone-sync
+63331/tcp closed unknown
+64623/tcp closed unknown
+64680/tcp closed unknown
+65000/tcp closed unknown
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port8443-TCP:V=7.60%T=SSL%I=7%D=11/27%Time=5DDE54F0%P=x86_64-pc-linux-g
+SF:nu%r(GetRequest,6B3,"HTTP/1\.1\x20200\x20OK\r\nServer:\x20sw-cp-server\
+SF:r\nDate:\x20Wed,\x2027\x20Nov\x202019\x2010:50:25\x20GMT\r\nContent-Typ
+SF:e:\x20text/html;\x20charset=UTF-8\r\nConnection:\x20close\r\nExpires:\x
+SF:20Fri,\x2028\x20May\x201999\x2000:00:00\x20GMT\r\nLast-Modified:\x20Wed
+SF:,\x2027\x20Nov\x202019\x2010:50:25\x20GMT\r\nCache-Control:\x20no-store
+SF:,\x20no-cache,\x20must-revalidate\r\nCache-Control:\x20post-check=0,\x2
+SF:0pre-check=0\r\nPragma:\x20no-cache\r\nP3P:\x20CP=\"NON\x20COR\x20CURa\
+SF:x20ADMa\x20OUR\x20NOR\x20UNI\x20COM\x20NAV\x20STA\"\r\n\r\n\n\x20\x20\x
+SF:20\x20\x20\x20\x20\x20<html><head>\n\x20\x20\x20\x20\x20\x20\x20\x20<me
+SF:ta\x20charset=\"utf-8\">\n\x20\x20\x20\x20\x20\x20\x20\x20<meta\x20http
+SF:-equiv=\"X-UA-Compatible\"\x20content=\"IE=edge,chrome=1\">\n\x20\x20\x
+SF:20\x20\x20\x20\x20\x20<meta\x20name=\"plesk-build\"\x20content=\"170818
+SF:0301\.19\">\n\x20\x20\x20\x20\x20\x20\x20\x20<title>Plesk\x20Onyx\x2017
+SF:\.8\.11</title>\n\x20\x20\x20\x20\x20\x20\x20\x20<script\x20language=\"
+SF:javascript\"\x20type=\"text/javascript\"\x20src=\"/javascript/common\.j
+SF:s\?1519907507\"/></script>\n\x20\x20\x20\x20\x20\x20\x20\x20<script\x20
+SF:language=\"javascript\"\x20type=\"text/javascript\"\x20src=\"/javascrip
+SF:t/externals/prototype\.js\?1519907507\"/></script>\n\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\n\x20\x20\x20\x20\x20\x20\x20\x20</head><body\x20onLoad=\
+SF:";top\.location='")%r(HTTPOptions,B0D,"HTTP/1\.1\x20405\x20Not\x20Allow
+SF:ed\r\nServer:\x20sw-cp-server\r\nDate:\x20Wed,\x2027\x20Nov\x202019\x20
+SF:10:50:25\x20GMT\r\nContent-Type:\x20text/html\r\nContent-Length:\x20265
+SF:4\r\nConnection:\x20close\r\nETag:\x20\"5965c92a-a5e\"\r\n\r\n<!DOCTYPE
+SF:\x20html>\n<html\x20lang=\"en\">\n\x20\x20<head>\n\x20\x20\x20\x20<meta
+SF:\x20charset=\"utf-8\">\n\x20\x20\x20\x20<meta\x20http-equiv=\"x-ua-comp
+SF:atible\"\x20content=\"ie=edge\">\n\x20\x20\x20\x20<meta\x20name=\"viewp
+SF:ort\"\x20content=\"width=device-width,\x20initial-scale=1,\x20shrink-to
+SF:-fit=no\">\n\x20\x20\x20\x20<title>405\x20Method\x20Not\x20Allowed</tit
+SF:le>\n\x20\x20\x20\x20<link\x20rel=\"stylesheet\"\x20href=\"/error_docs/
+SF:styles\.css\">\n\x20\x20</head>\n\x20\x20<body>\n\x20\x20\x20\x20<div\x
+SF:20class=\"page\">\n\x20\x20\x20\x20\x20\x20<div\x20class=\"main\">\n\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20<div\x20class=\"error-description\">\n\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20<h1>Server\x20Error</h1>\n\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\"error-code\">405</div>\n
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h2>Method\x20Not\x20Allowed</h
+SF:2>\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\"lead\">The\x2
+SF:0HTTP\x20verb\x20used\x20to\x20access\x20this\x20page\x20is\x20not\x20a
+SF:llowed\.</p>\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<hr/>\n\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20<p>If\x20you\x20think\x20this\x20is\x20an
+SF:\x20error,\x20please\x20<a\x20href=\"https://www\.plesk\.com/bug");
+Service Info: Hosts: wearestrap.loading.net,  wearestrap.loading.net
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Nov 27 11:52:53 2019 -- 1 IP address (1 host up) scanned in 165.65 seconds

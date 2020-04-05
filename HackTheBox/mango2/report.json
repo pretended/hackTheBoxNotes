@@ -1,0 +1,10 @@
+{
+    "options": {
+        "viewType": "charts",
+        "chart": {
+            "type": "scatter"
+        }
+    },
+    "version": "2.7.19",
+    "creationDate": "2019-11-28T22:46:17.506Z"
+}

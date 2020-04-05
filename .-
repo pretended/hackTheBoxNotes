@@ -1,0 +1,137 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package GestionUsuarios;
+
+import java.util.Vector;
+import java.io.Console;
+import java.util.Scanner;
+/**
+ *
+ * @author mateo
+ */
+
+public class GestionUsuarios 
+{
+      static String usActual;
+    /**
+     * @param args the command line arguments
+     * @throws java.lang.InterruptedException
+     */
+    public static void main(String[] args)  throws InterruptedException
+    {
+      Vector<String>usuarios=new Vector<>();
+      Vector<String>contraseña=new Vector<>();
+      Vector<String>opciones=new Vector<>();
+      Console teclado=System.console();
+      String us=new String();
+      char[]pass;
+      int opc;
+      
+      usuarios.add("Admin");
+      contraseña.add("123");
+      opciones.add("1.Comprar coche");
+      opciones.add("2.Vender un vehiculo");
+      opciones.add("3.Vehiculo más vendido por marca");
+      opciones.add("4.Utilidades");
+      opciones.add("5.Salir");
+      
+      System.out.print("Usuario: ");
+      us=teclado.readLine();
+      
+      System.out.print("Contraseña");
+      pass=teclado.readPassword();
+      String password=new String(pass);
+      
+      if(buscar(us,password,usuarios,contraseña))
+      {
+      usActual=us;
+       do{
+          opc=menu(opciones);
+           switch(opc)
+           {
+               case 1: registrar(usuarios,contraseña); break; 
+                
+               case 2: System.out.print("Usuario: ");
+                       us=teclado.readLine();
+                       System.out.print("Contraseña: ");
+                       pass=teclado.readPassword();
+                       String Password=new String(pass);
+                       if(buscar(us,password,usuarios,contraseña))
+                       {
+                           us=usActual;
+                           System.out.println("Acceso correcto!! Bienvenido "+usActual);
+                       }
+                       
+                       else System.out.println("Acceso incorrecto!!");
+                       break;
+           }
+         }while(opc!=4);
+      }
+      
+    }
+   static int menu(Vector<String>op)
+   {
+        int opc;
+       Scanner teclado=new Scanner(System.in);
+       borrarPantalla();
+        for(int i=0;i<op.size();i++)
+            System.out.println(op.elementAt(i)+"\n");
+        
+        System.out.print("Usuario actual: "+usActual);
+        System.out.print("\nOpciones: ");
+        opc=teclado.nextInt();
+        
+        return(opc);
+   }
+   static boolean buscar(String u, String c, Vector<String>us, Vector<String>password)
+   {
+       for(int i=0;i<us.size();i++)
+      if((us.elementAt(i).equals(u))&&(password.elementAt(i).equals(c))) return(true);
+       
+     return(false);
+   }
+   static void registrar(Vector<String>us,Vector<String>password)
+   {
+     Console teclado=System.console();
+     String u=new String();
+     char[]pass;
+     
+     System.out.print("Usuario a registrar: ");
+     u=teclado.readLine();
+     if(buscarNombre(u,us)!=-1) System.out.println("Este usuario ya existe!!");
+     else
+     {
+       System.out.print("Contraseña: ");
+       pass=teclado.readPassword();
+       String c=new String(pass);
+       us.add(u);
+       password.add(c);
+     }
+   }
+   static void listaUsuarios(Vector<String> u)
+     {
+         for(int i=0;i<u.size();i++)
+           System.out.print("Usuario( "+(i+1)+" )"+u.elementAt(i));
+     }
+   static int buscarNombre(String usuario,Vector<String>us)
+   {
+       return(us.indexOf(usuario));
+   }
+   static void borrarPantalla()
+   {
+      System.out.print("\033[H\033[2J");
+     
+   }
+   static void mensaje(String m,int milSeg) throws InterruptedException
+   {
+       for(int i=0;i<m.length();i++)
+       {
+         Thread.sleep(milSeg);
+         System.out.print(m.charAt(i));
+       }
+       System.out.println();
+   }
+}

@@ -1,0 +1,10 @@
+# Nmap 7.60 scan initiated Tue Nov 26 08:22:42 2019 as: nmap -sC -sV -sA -o bitlap.nmap 10.10.10.114
+Nmap scan report for 10.10.10.114
+Host is up (0.12s latency).
+Not shown: 998 filtered ports
+PORT   STATE      SERVICE VERSION
+22/tcp unfiltered ssh
+80/tcp unfiltered http
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Nov 26 08:22:55 2019 -- 1 IP address (1 host up) scanned in 12.42 seconds

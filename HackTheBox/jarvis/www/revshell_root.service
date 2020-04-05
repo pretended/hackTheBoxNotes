@@ -1,0 +1,9 @@
+[Unit]
+Description=root shell
+
+[Service]
+ExecStart=/tmp/shelly.sh
+
+[Install]
+WantedBy=multi-user.target
+
